@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import api from "../utils/api";
+import api from "../../utils/api";
 import { motion } from "framer-motion";
 import { FaUser, FaEnvelope, FaSignOutAlt } from "react-icons/fa";
 import Button from "../../components/UI/Button";
@@ -75,7 +75,7 @@ export default function ProfilePage() {
                   <h3 className="text-sm font-medium text-gray-500">
                     Username
                   </h3>
-                  <p className="text-lg font-medium">
+                  <p className="text-lg font-medium text-black">
                     {profile.userId?.username || "N/A"}
                   </p>
                 </div>
@@ -87,7 +87,7 @@ export default function ProfilePage() {
                 </div>
                 <div>
                   <h3 className="text-sm font-medium text-gray-500">Email</h3>
-                  <p className="text-lg font-medium">
+                  <p className="text-lg font-medium text-black">
                     {profile.userId?.email || "N/A"}
                   </p>
                 </div>
@@ -102,7 +102,9 @@ export default function ProfilePage() {
                     <h3 className="text-sm font-medium text-gray-500">
                       Grade Level
                     </h3>
-                    <p className="text-lg font-medium">{profile.gradeLevel}</p>
+                    <p className="text-lg font-medium text-black">
+                      {profile.gradeLevel}
+                    </p>
                   </div>
                 </div>
               )}

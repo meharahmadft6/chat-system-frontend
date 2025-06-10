@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Button from "../../../components/UI/Button";
 import Input from "../../../components/UI/Input";
-import api from "../../../../utils/animations";
+import api from "../../../utils/api";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -23,9 +23,11 @@ export default function LoginPage() {
     onSubmit: async (values, { setSubmitting, setErrors }) => {
       try {
         const response = await api.post("/auth/login", values);
+        console.log("Login response:", response.data);
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("userId", response.data.userId);
         localStorage.setItem("role", response.data.role);
-        router.push("/profile");
+        router.push("/dashboard");
       } catch (error) {
         setErrors({ submit: error.response?.data?.error || "Login failed" });
       } finally {

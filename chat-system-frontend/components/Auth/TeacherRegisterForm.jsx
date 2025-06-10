@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useFormik } from "formik";
+import Link from "next/link";
 import * as Yup from "yup";
 import {
   FaUser,
@@ -11,7 +12,6 @@ import {
 import Button from "../UI/Button";
 import Input from "../UI/Input";
 import api from "../../utils/api";
-
 const TeacherRegisterForm = ({ onSuccess }) => {
   const formik = useFormik({
     initialValues: {
@@ -196,7 +196,9 @@ const TeacherRegisterForm = ({ onSuccess }) => {
             <p className="text-gray-500">
               Already have an account?{" "}
               <Link href="/auth/login">
-                <a className="text-purple-600 hover:underline">Login</a>
+                <span className="text-indigo-600 hover:underline cursor-pointer">
+                  Login
+                </span>
               </Link>
             </p>
           </div>

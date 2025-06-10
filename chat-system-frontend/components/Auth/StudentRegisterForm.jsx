@@ -5,9 +5,10 @@ import {
   FaUser,
   FaEnvelope,
   FaLock,
-  FaBook,
   FaGraduationCap,
+  FaUserGraduate,
 } from "react-icons/fa";
+import Link from "next/link";
 import Button from "../UI/Button";
 import Input from "../UI/Input";
 import api from "../../utils/api";
@@ -177,7 +178,9 @@ const StudentRegisterForm = ({ onSuccess }) => {
             <p className="text-gray-500">
               Already have an account?{" "}
               <Link href="/auth/login">
-                <a className="text-blue-600 hover:underline">Login</a>
+                <span className="text-indigo-600 hover:underline cursor-pointer">
+                  Login
+                </span>
               </Link>
             </p>
           </div>
